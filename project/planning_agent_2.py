@@ -36,13 +36,7 @@ MAX_AGENT_STEPS = 10
 
 llm = ChatOpenAI(
     model="gpt-oss-120b",
-    #api_key="70c6f4fd-2b86-4e32-822e-5ab0e46c6e22",
-    api_key="0f8a1a6a-2ad0-4fcb-8807-2e4dcb7abfc6",
-    #api_key="870157c4-a0ad-4d63-a5c5-aafc8c86e981",
-    #api_key="6c678ea6-c347-466e-9884-951e0a2ba7f1",
-    #api_key="da1f3b57-de84-4c9f-b27e-bcdbe79072e6",
-    #api_key="3b5b7d8e-594c-49ae-ad57-9a837b1a28ce",
-    #api_key="0af91ff2-ca58-4f5f-9c8b-d346f91bd67f",
+    api_key="your_api_key",
     base_url="https://api.sambanova.ai/v1"
 )
 
@@ -174,7 +168,7 @@ def search_web(query: str) -> List[Dict]:
     print(">>> SEARCHING WEB...")
     tavily = TavilySearch(
         max_results=2,
-        tavily_api_key="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"
+        tavily_api_key="your_tavily_key"
     )
     results = tavily.invoke(query)
 
@@ -331,8 +325,7 @@ def final_summarization(list_of_outputs: list,query: str):
     llm =ChatOpenAI(
     model="gpt-oss-120b",
     base_url="https://api.sambanova.ai/v1",
-    api_key="3b5b7d8e-594c-49ae-ad57-9a837b1a28ce",
-    #api_key="0af91ff2-ca58-4f5f-9c8b-d346f91bd67f",
+    api_key="your_api_key",
     temperature=0
 )
 
